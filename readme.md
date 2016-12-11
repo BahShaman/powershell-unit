@@ -34,9 +34,9 @@ typical usage is to create unittest_funcitons somewhere within your project.  Yo
 ```
 
 This will output:
-    PASS: test_something: message to include "expected" equals "expected"
+     PASS: test_something: message to include "expected" equals "expected"
 or
-    FAIL: test_something: message to include "not expected" should equal "expected"
+     FAIL: test_something: message to include "not expected" should equal "expected"
 
 ## Function List
 

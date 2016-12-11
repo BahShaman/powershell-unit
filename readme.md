@@ -33,11 +33,14 @@ typical usage is to create unittest_funcitons somewhere within your project.  Yo
 
 ```
 
-This will output:
+This will output if passing:
+```
      PASS: test_something: message to include "expected" equals "expected"
-or
+```
+or if failing
+```
      FAIL: test_something: message to include "not expected" should equal "expected"
-
+```
 ## Function List
 
 Function | Usage 

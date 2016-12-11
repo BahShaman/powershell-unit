@@ -3,15 +3,13 @@
 ## Background
 My goal for this scripts was to keep them easy to use and easy to get started with.  I have done entire powershell projects using just a simple assertTrue function and then creating test_ functions in a file and calling them explicitly at the bottom of the file.  
 
-Since then I have added a few more functions, including a function that makes it easy to compare multi-line output, opening winmerge to compare. 
-
-## Usage
-Typically I will create a file called UnitTest-SomeFunctions.ps1
+Since then I have added a few more functions, including a function that makes it easy to compare multi-line output, opening winmerge to compare. I have also added a Run-Tests function that runs all the tests in a file.  This method is far supierior to my old way of calling each test_ function explicitly.
 
 ### Directory Placement
 typical usage is to create unittest_funcitons somewhere within your project.  You will only need to include it in your UnitTest-... files.  
 
-### Including in a file
+## Usage
+Typically I will create a file called UnitTest-SomeFunctions.ps1 and set it up as follows:
 ```PowerShell
     #include (dot source) file UnitTest-SomeFunctions.ps1
 	. ./powershell-unit/unittest_functions.ps1 #path to unit test functions
@@ -50,6 +48,7 @@ assertEqual($val,$expected,$message)| Make Assertion value is Equal expected
 assertFalse($val,$expected,$message)| Make assertion value is not equal to expected
 assertMessage($passfail,$message,$functionname)| Create the assert PASS or FAIL Message
 assertMatchInFile($val,$expected,[switch]$diff)| Create a file for each $val and $expected and compare.  If -diff then the files are opened in windiff if they do not match. files are created in a directory called Approvals in the current directory
+assertMatchToFile($val,$expected,[switch]$diff)| Create a file for each $val and $expected and compare.  If -diff then the files are opened in windiff if they do not match. files are created in a directory called Approvals in the current directory
 assertFileExists($filename,$message)| confirm a file exists
 assertFileNotExists($filename,$message)| confirm a file does not exist.
 Run-Tests($pattern="")|Runs the tests starting with test_ or containing $pattern if specified
